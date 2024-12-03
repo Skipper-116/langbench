@@ -31,6 +31,7 @@ Welcome to LangBench! This project aims to benchmark the performance of various 
 The following language versions are used in this project:
 
 - **C++**: Apple clang version 16.0.0 (clang-1600.0.26.4)
+- **C**: Apple clang version 16.0.0 (clang-1600.0.26.4)
 - **C#**: .NET 9.0.100
 - **Java**: OpenJDK 17
 - **Ruby**: ruby 3.2.0 (2022-12-25 revision a528908271) [arm64-darwin23]
@@ -41,6 +42,7 @@ The following language versions are used in this project:
 - `./cSharp/Program.cs`: Contains the C# implementation of the Fibonacci calculation and matrix multiplication.
 - `./javaCode/Main.java`: Contains the Java implementation of the Fibonacci calculation and matrix multiplication.
 - `./rubyCode/sample.rb`: Contains the Ruby implementation of the Fibonacci calculation and matrix multiplication.
+- `./cCode/program.c`: Contains the C implementation of the Fibonacci calculation and matrix multiplication.
 - `test.sh`: Script to run the benchmarks for each language.
 
 ## Example Output
@@ -48,16 +50,18 @@ The following language versions are used in this project:
 After running the `test.sh` script, you will see output similar to the following:
 
 ```sh
-Elapsed time C++: 0.00001002 seconds
-Elapsed time C#: 0.00001503 seconds
-Elapsed time Java: 0.00001234 seconds
-Elapsed time Ruby: 0.00001345 seconds
+Elapsed time Java: 0.012839167 seconds
+Elapsed time C++: 0.0122203 seconds
+Elapsed time Ruby: 0.206911 seconds
+Elapsed time C: 0.004864 seconds
+Elapsed time C#: 0.0125774 seconds
 ```
 
 ## Requirements
 Make sure you have the following installed on your system:
 
 * C++ compiler (Apple clang version 16.0.0 or compatible)
+* C compiler (Apple clang version 16.0.0 or compatible)
 * .NET 9.0.100
 * OpenJDK 21.0.3
 * ruby 3.2.0 (2022-12-25 revision a528908271) [arm64-darwin23]
