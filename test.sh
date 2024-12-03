@@ -19,7 +19,9 @@ go build -o goCode/main ./goCode/main.go
 cargo build --release --manifest-path ./rustCode/Cargo.toml
 
 # Run the programs
+dotnet run --project ./csharp
 ./rustCode/target/release/rustCode &
+dart run dartCode/program.dart &
 ruby ./rubyCode/sample.rb &
 java -cp ./javaCode Main &
 ./cPlusPlus/main &
@@ -28,5 +30,4 @@ java -cp ./javaCode Main &
 python ./pyCode/main.py &
 node ./jsCode/index.js &
 php ./phpCode/index.php &
-dotnet run --project ./csharp &
 wait
