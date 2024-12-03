@@ -40,6 +40,7 @@ The following language versions are used in this project:
 - **PHP**: PHP 8.3.14
 - **Go**: go1.23.3 darwin/arm64
 - **Rust**: rustc 1.83.0 (90b35a623 2024-11-26)
+- **Dart**: Dart SDK version: 3.4.3 (stable) (Tue Jun 4 19:51:39 2024 +0000)
 
 ## Project Structure
 
@@ -53,6 +54,7 @@ The following language versions are used in this project:
 - `./phpCode/index.php`: Contains the PHP implementation of the Fibonacci calculation and matrix multiplication.
 - `./goCode/main.go`: Contains the Go implementation of the Fibonacci calculation and matrix multiplication.
 - `./rustCode/src/main.rs`: Contains the Rust implementation of the Fibonacci calculation and matrix multiplication.
+- `./dartCode/program.dart`: Contains the Dart implementation of the Fibonacci calculation and matrix multiplication.
 - `test.sh`: Script to run the benchmarks for each language.
 
 ## Current Output
@@ -88,3 +90,4 @@ Make sure you have the following installed on your system:
 * PHP 8.3.14
 * Go go1.23.3 darwin/arm64
 * Rust rustc 1.83.0 (90b35a623 2024-11-26) && cargo 1.83.0
+* Dart Dart SDK version: 3.4.3 (stable) (Tue Jun 4 19:51:39 2024 +0000)
