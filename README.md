@@ -73,7 +73,7 @@ Elapsed time C#: 0.0124871 seconds
 ```
 
 Visual representation of the output:
-![alt text](image.png)
+![alt text](image-1.png)
 
 ## Requirements
 Make sure you have the following installed on your system:
