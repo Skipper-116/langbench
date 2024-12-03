@@ -72,6 +72,9 @@ Elapsed time Go: 0.004691 seconds
 Elapsed time C#: 0.0124871 seconds
 ```
 
+Visual representation of the output:
+![alt text](image.png)
+
 ## Requirements
 Make sure you have the following installed on your system:
 
