@@ -37,7 +37,7 @@ The following language versions are used in this project:
 - **Ruby**: ruby 3.2.0 (2022-12-25 revision a528908271) [arm64-darwin23]
 - **Python**: Python 3.12.7
 - **JavaScript**: Node.js v20.15.1
-- **PHP**: PHP 8.3.0
+- **PHP**: PHP 8.3.14
 
 ## Project Structure
 
@@ -76,4 +76,4 @@ Make sure you have the following installed on your system:
 * ruby 3.2.0 (2022-12-25 revision a528908271) [arm64-darwin23]
 * Python 3.12.7
 * Node.js v20.15.1
-* PHP 8.3.0
+* PHP 8.3.14
