@@ -18,5 +18,6 @@ java -cp ./javaCode Main &
 ./cPlusPlus/main &
 ./cCode/program &
 python ./pyCode/main.py &
+node ./jsCode/index.js &
 dotnet run --project ./csharp & 
 wait

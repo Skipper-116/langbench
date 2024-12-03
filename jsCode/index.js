@@ -1,4 +1,4 @@
-console.time("Elapsed time JS");
+const startTime = Date.now();
 
 function fibonacci(n, memo = {}) {
     if (n <= 1) return n;
@@ -43,4 +43,6 @@ let matrixA = generateMatrix(100, 100);
 let matrixB = generateMatrix(100, 100);
 matrixMultiply(matrixA, matrixB);
 
-console.timeEnd("Elapsed time JS");
+const endTime = Date.now();
+const elapsedTime = (endTime - startTime) / 1000;
+console.log(`Elapsed time JS: ${elapsedTime} seconds`);
