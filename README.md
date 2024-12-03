@@ -38,6 +38,7 @@ The following language versions are used in this project:
 - **Python**: Python 3.12.7
 - **JavaScript**: Node.js v20.15.1
 - **PHP**: PHP 8.3.14
+- **Go**: go1.23.3 darwin/arm64
 
 ## Project Structure
 
@@ -49,6 +50,7 @@ The following language versions are used in this project:
 - `./pyCode/main.py`: Contains the Python implementation of the Fibonacci calculation and matrix multiplication.
 - `./jsCode/index.js`: Contains the JavaScript implementation of the Fibonacci calculation and matrix multiplication.
 - `./phpCode/index.php`: Contains the PHP implementation of the Fibonacci calculation and matrix multiplication.
+- `./goCode/main.go`: Contains the Go implementation of the Fibonacci calculation and matrix multiplication.
 - `test.sh`: Script to run the benchmarks for each language.
 
 ## Current Output
@@ -56,14 +58,15 @@ The following language versions are used in this project:
 After running the `test.sh` script, you will see output similar to the following:
 
 ```sh
-Elapsed time Python: 0.12528014183044434 seconds
-Elapsed time PHP: 0.095395803451538 seconds
-Elapsed time Java: 0.01636725 seconds
-Elapsed time JS: 0.03 seconds
-Elapsed time C++: 0.0115367 seconds
-Elapsed time Ruby: 0.15477 seconds
-Elapsed time C: 0.003686 seconds
-Elapsed time C#: 0.0123736 seconds
+Elapsed time Python: 0.19962477684020996 seconds
+Elapsed time PHP: 0.14925599098206 seconds
+Elapsed time C++: 0.0221813 seconds
+Elapsed time Java: 0.021486333 seconds
+Elapsed time JS: 0.054 seconds
+Elapsed time C: 0.007646 seconds
+Elapsed time Ruby: 0.268859 seconds
+Elapsed time Go: 0.004691 seconds
+Elapsed time C#: 0.0124871 seconds
 ```
 
 ## Requirements
@@ -77,3 +80,4 @@ Make sure you have the following installed on your system:
 * Python 3.12.7
 * Node.js v20.15.1
 * PHP 8.3.14
+* Go go1.23.3 darwin/arm64
