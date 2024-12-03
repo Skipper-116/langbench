@@ -36,6 +36,7 @@ The following language versions are used in this project:
 - **Java**: OpenJDK 17
 - **Ruby**: ruby 3.2.0 (2022-12-25 revision a528908271) [arm64-darwin23]
 - **Python**: Python 3.12.7
+- **JavaScript**: Node.js v20.15.1
 
 ## Project Structure
 
@@ -45,6 +46,7 @@ The following language versions are used in this project:
 - `./rubyCode/sample.rb`: Contains the Ruby implementation of the Fibonacci calculation and matrix multiplication.
 - `./cCode/program.c`: Contains the C implementation of the Fibonacci calculation and matrix multiplication.
 - `./pyCode/main.py`: Contains the Python implementation of the Fibonacci calculation and matrix multiplication.
+- `./jsCode/index.js`: Contains the JavaScript implementation of the Fibonacci calculation and matrix multiplication.
 - `test.sh`: Script to run the benchmarks for each language.
 
 ## Current Output
@@ -52,12 +54,13 @@ The following language versions are used in this project:
 After running the `test.sh` script, you will see output similar to the following:
 
 ```sh
-Elapsed time Python: 0.08607888221740723 seconds
-Elapsed time Java: 0.011868083 seconds
-Elapsed time C: 0.003922 seconds
-Elapsed time Ruby: 0.156885 seconds
-Elapsed time C++: 0.0110327 seconds
-Elapsed time C#: 0.0124333 seconds
+Elapsed time Python: 0.1074059009552002 seconds
+Elapsed time Java: 0.01724625 seconds
+Elapsed time JS: 0.029 seconds
+Elapsed time C: 0.005897 seconds
+Elapsed time C++: 0.0108831 seconds
+Elapsed time Ruby: 0.155632 seconds
+Elapsed time C#: 0.012539 seconds
 ```
 
 ## Requirements
@@ -69,3 +72,4 @@ Make sure you have the following installed on your system:
 * OpenJDK 21.0.3
 * ruby 3.2.0 (2022-12-25 revision a528908271) [arm64-darwin23]
 * Python 3.12.7
+* Node.js v20.15.1
