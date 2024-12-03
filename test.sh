@@ -18,4 +18,5 @@ ruby ./rubyCode/sample.rb &
 java -cp ./javaCode Main &
 ./cPlusPlus/main &
 ./cCode/program &
+python ./pythonCode/sample.py &
 wait
