@@ -1,0 +1,45 @@
+# Ignore build output directories
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.generated.cs
+
+# Backup & report files
+*.bak
+*.log
+*.dmp
+*.err
+*.out
+
+# Package directories
+packages/
+*.nupkg
+*.snupkg
+
+# Visual Studio Code directories
+.vscode/
+
+# Rider directories
+.idea/
+
+# DotNet specific files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# DotNet 9 specific
+.vs/
