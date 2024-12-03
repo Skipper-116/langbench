@@ -15,7 +15,7 @@ fn main() {
     let _result = matrix_multiply(&matrix_a, &matrix_b);
 
     let elapsed = start.elapsed();
-    println!("Elapsed time Rust: {:.2} seconds", elapsed.as_secs_f64());
+    println!("Elapsed time Rust: {:.8} seconds", elapsed.as_secs_f64());
 }
 
 fn fibonacci(n: usize, memo: &mut HashMap<usize, u64>) -> u64 {
