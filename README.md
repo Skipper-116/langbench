@@ -35,6 +35,7 @@ The following language versions are used in this project:
 - **C#**: .NET 9.0.100
 - **Java**: OpenJDK 17
 - **Ruby**: ruby 3.2.0 (2022-12-25 revision a528908271) [arm64-darwin23]
+- **Python**: Python 3.12.7
 
 ## Project Structure
 
@@ -43,18 +44,20 @@ The following language versions are used in this project:
 - `./javaCode/Main.java`: Contains the Java implementation of the Fibonacci calculation and matrix multiplication.
 - `./rubyCode/sample.rb`: Contains the Ruby implementation of the Fibonacci calculation and matrix multiplication.
 - `./cCode/program.c`: Contains the C implementation of the Fibonacci calculation and matrix multiplication.
+- `./pyCode/main.py`: Contains the Python implementation of the Fibonacci calculation and matrix multiplication.
 - `test.sh`: Script to run the benchmarks for each language.
 
-## Example Output
+## Current Output
 
 After running the `test.sh` script, you will see output similar to the following:
 
 ```sh
-Elapsed time Java: 0.012839167 seconds
-Elapsed time C++: 0.0122203 seconds
-Elapsed time Ruby: 0.206911 seconds
-Elapsed time C: 0.004864 seconds
-Elapsed time C#: 0.0125774 seconds
+Elapsed time Python: 0.08607888221740723 seconds
+Elapsed time Java: 0.011868083 seconds
+Elapsed time C: 0.003922 seconds
+Elapsed time Ruby: 0.156885 seconds
+Elapsed time C++: 0.0110327 seconds
+Elapsed time C#: 0.0124333 seconds
 ```
 
 ## Requirements
@@ -65,3 +68,4 @@ Make sure you have the following installed on your system:
 * .NET 9.0.100
 * OpenJDK 21.0.3
 * ruby 3.2.0 (2022-12-25 revision a528908271) [arm64-darwin23]
+* Python 3.12.7

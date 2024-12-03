@@ -13,10 +13,10 @@ g++ -o cPlusPlus/main ./cPlusPlus/main.cpp
 gcc -o cCode/program ./cCode/program.c
 
 # Run the programs
-dotnet run --project ./csharp & 
 ruby ./rubyCode/sample.rb &
 java -cp ./javaCode Main &
 ./cPlusPlus/main &
 ./cCode/program &
-python ./pythonCode/sample.py &
+python ./pyCode/main.py &
+dotnet run --project ./csharp & 
 wait
