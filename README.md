@@ -39,6 +39,7 @@ The following language versions are used in this project:
 - **JavaScript**: Node.js v20.15.1
 - **PHP**: PHP 8.3.14
 - **Go**: go1.23.3 darwin/arm64
+- **Rust**: rustc 1.83.0 (90b35a623 2024-11-26)
 
 ## Project Structure
 
@@ -51,6 +52,7 @@ The following language versions are used in this project:
 - `./jsCode/index.js`: Contains the JavaScript implementation of the Fibonacci calculation and matrix multiplication.
 - `./phpCode/index.php`: Contains the PHP implementation of the Fibonacci calculation and matrix multiplication.
 - `./goCode/main.go`: Contains the Go implementation of the Fibonacci calculation and matrix multiplication.
+- `./rustCode/src/main.rs`: Contains the Rust implementation of the Fibonacci calculation and matrix multiplication.
 - `test.sh`: Script to run the benchmarks for each language.
 
 ## Current Output
@@ -64,6 +66,7 @@ Elapsed time C++: 0.0221813 seconds
 Elapsed time Java: 0.021486333 seconds
 Elapsed time JS: 0.054 seconds
 Elapsed time C: 0.007646 seconds
+Elapsed time Rust: 0.01 seconds
 Elapsed time Ruby: 0.268859 seconds
 Elapsed time Go: 0.004691 seconds
 Elapsed time C#: 0.0124871 seconds
@@ -81,3 +84,4 @@ Make sure you have the following installed on your system:
 * Node.js v20.15.1
 * PHP 8.3.14
 * Go go1.23.3 darwin/arm64
+* Rust rustc 1.83.0 (90b35a623 2024-11-26) && cargo 1.83.0
