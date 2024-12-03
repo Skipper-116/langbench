@@ -1,0 +1,26 @@
+# Compiled binary files
+/target/
+
+# Cargo lock file (if managing dependencies for a library)
+Cargo.lock
+
+# Backup files
+*.rs.bk
+
+# Editor-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
