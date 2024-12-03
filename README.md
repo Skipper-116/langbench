@@ -92,3 +92,9 @@ Make sure you have the following installed on your system:
 * Go go1.23.3 darwin/arm64
 * Rust rustc 1.83.0 (90b35a623 2024-11-26) && cargo 1.83.0
 * Dart Dart SDK version: 3.4.3 (stable) (Tue Jun 4 19:51:39 2024 +0000)
+
+We have provided a script to install the required versions of each language but it is important to note that this has not yet been tested, you might as well contribute to it. Run the following command:
+
+```sh
+sh setup.sh
+```
