@@ -19,5 +19,6 @@ java -cp ./javaCode Main &
 ./cCode/program &
 python ./pyCode/main.py &
 node ./jsCode/index.js &
-dotnet run --project ./csharp & 
+dotnet run --project ./csharp &
+php ./phpCode/index.php &
 wait
