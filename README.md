@@ -52,6 +52,7 @@ Elapsed time C++: 0.00001002 seconds
 Elapsed time C#: 0.00001503 seconds
 Elapsed time Java: 0.00001234 seconds
 Elapsed time Ruby: 0.00001345 seconds
+```
 
 ## Requirements
 Make sure you have the following installed on your system:
