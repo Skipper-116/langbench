@@ -86,7 +86,7 @@ Make sure you have the following installed on your system:
 * .NET 9.0.100
 * OpenJDK 21.0.3
 * ruby 3.2.0 (2022-12-25 revision a528908271) [arm64-darwin23]
-* Python 3.12.7
+* Python 3.12.7 juiced with NumPy
 * Node.js v20.15.1
 * PHP 8.3.14
 * Go go1.23.3 darwin/arm64
