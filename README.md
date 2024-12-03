@@ -62,16 +62,17 @@ The following language versions are used in this project:
 After running the `test.sh` script, you will see output similar to the following:
 
 ```sh
-Elapsed time Python: 0.19962477684020996 seconds
-Elapsed time PHP: 0.14925599098206 seconds
-Elapsed time C++: 0.0221813 seconds
-Elapsed time Java: 0.021486333 seconds
-Elapsed time JS: 0.054 seconds
-Elapsed time C: 0.007646 seconds
-Elapsed time Rust: 0.01 seconds
-Elapsed time Ruby: 0.107684 seconds
-Elapsed time Go: 0.004691 seconds
-Elapsed time C#: 0.0124871 seconds
+Elapsed time C#: 0.012443 seconds
+Elapsed time Go: 0.009214 seconds
+Elapsed time Python: 0.20249485969543457 seconds
+Elapsed time Java: 0.028840167 seconds
+Elapsed time PHP: 0.18245697021484 seconds
+Elapsed time JS: 0.038 seconds
+Elapsed time Rust: 0.00520133 seconds
+Elapsed time Ruby: 0.097235 seconds
+Elapsed time C: 0.003723 seconds
+Elapsed time C++: 0.0107881 seconds
+Elapsed time Dart: 0.008 seconds
 ```
 
 Visual representation of the output:
