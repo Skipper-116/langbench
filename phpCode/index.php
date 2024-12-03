@@ -1,12 +1,31 @@
 <?php
+function matrixMultiply($matrixA, $matrixB) {
+    $rowsA = count($matrixA);
+    $colsA = count($matrixA[0]);
+    $colsB = count($matrixB[0]);
+    $result = array_fill(0, $rowsA, array_fill(0, $colsB, 0));
+
+    for ($i = 0; $i < $rowsA; $i++) {
+        for ($j = 0; $j < $colsB; $j++) {
+            $sum = 0;
+            for ($k = 0; $k < $colsA; $k++) {
+                $sum += $matrixA[$i][$k] * $matrixB[$k][$j];
+            }
+            $result[$i][$j] = $sum;
+        }
+    }
+    return $result;
+}
 
 function fibonacci($n, &$memo) {
-    if ($n <= 1) return $n;
-    if (isset($memo[$n])) return $memo[$n];
-
-    $result = fibonacci($n - 1, $memo) + fibonacci($n - 2, $memo);
-    $memo[$n] = $result;
-    return $result;
+    if ($n <= 1) {
+        return $n;
+    }
+    if (isset($memo[$n])) {
+        return $memo[$n];
+    }
+    $memo[$n] = fibonacci($n - 1, $memo) + fibonacci($n - 2, $memo);
+    return $memo[$n];
 }
 
 function generateMatrix($rows, $cols) {
@@ -18,24 +37,6 @@ function generateMatrix($rows, $cols) {
         }
     }
     return $matrix;
-}
-
-function matrixMultiply($matrixA, $matrixB) {
-    $rowsA = count($matrixA);
-    $colsA = count($matrixA[0]);
-    $colsB = count($matrixB[0]);
-
-    $result = [];
-    for ($i = 0; $i < $rowsA; $i++) {
-        $result[$i] = [];
-        for ($j = 0; $j < $colsB; $j++) {
-            $result[$i][$j] = 0;
-            for ($k = 0; $k < $colsA; $k++) {
-                $result[$i][$j] += $matrixA[$i][$k] * $matrixB[$k][$j];
-            }
-        }
-    }
-    return $result;
 }
 
 $start = microtime(true);
