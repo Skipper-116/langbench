@@ -76,7 +76,7 @@ Elapsed time Dart: 0.008 seconds
 ```
 
 Visual representation of the output:
-![alt text](image_2.png)
+![alt text](image-3.png)
 
 ## Requirements
 Make sure you have the following installed on your system:
