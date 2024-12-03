@@ -67,7 +67,7 @@ Elapsed time Java: 0.021486333 seconds
 Elapsed time JS: 0.054 seconds
 Elapsed time C: 0.007646 seconds
 Elapsed time Rust: 0.01 seconds
-Elapsed time Ruby: 0.268859 seconds
+Elapsed time Ruby: 0.107684 seconds
 Elapsed time Go: 0.004691 seconds
 Elapsed time C#: 0.0124871 seconds
 ```

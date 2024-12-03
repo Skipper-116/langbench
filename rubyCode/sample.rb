@@ -1,28 +1,28 @@
 # frozen_string_literal: true
 
-def fibonacci(num:, memo: {})
-  return num if num <= 1
-  return memo[num] if memo.key?(num)
+# frozen_string_literal: true
 
-  memo[num] = fibonacci(num: (num - 1), memo: memo) + fibonacci(num: (num - 2), memo: memo)
-  memo[num]
+require 'matrix'
+
+def fibonacci(num)
+  return num if num <= 1
+
+  fib = [0, 1]
+  (2..num).each do |i|
+    fib[i] = fib[i - 1] + fib[i - 2]
+  end
+  fib[num]
 end
 
 def matrix_multiply(a, b)
-  result = Array.new(a.length) { Array.new(b[0].length, 0) }
-  a.length.times do |i|
-    b[0].length.times do |j|
-      b.length.times do |k|
-        result[i][j] += a[i][k] * b[k][j]
-      end
-    end
-  end
-  result
+  a_matrix = Matrix[*a]
+  b_matrix = Matrix[*b]
+  (a_matrix * b_matrix).to_a
 end
 
 start_time = Time.now
 
-fibonacci(num: 1000, memo: {})
+fibonacci(1000)
 matrix_a = Array.new(100) { Array.new(100) { rand(100) } }
 matrix_b = Array.new(100) { Array.new(100) { rand(100) } }
 matrix_multiply(matrix_a, matrix_b)
