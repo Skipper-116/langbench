@@ -30,6 +30,11 @@ fn main() {
     let mut dataset_insertion = dataset.clone();
     insertion_sort(&mut dataset_insertion);
 
+    // random number to search max 1000
+    let target = rand::thread_rng().gen_range(1..1_000);
+    binary_search(&dataset_quick, target);
+    linear_search(&dataset, target);
+
     let elapsed = start.elapsed();
     println!("Elapsed time Rust: {:.8} seconds", elapsed.as_secs_f64());
 }
@@ -163,4 +168,30 @@ fn insertion_sort(arr: &mut [i32]) {
         }
         arr[j] = key;
     }
+}
+
+fn binary_search(arr: &[i32], target: i32) -> Option<usize> {
+    let mut low = 0;
+    let mut high = arr.len() - 1;
+
+    while low <= high {
+        let mid = (low + high) / 2;
+        if arr[mid] == target {
+            return Some(mid);
+        } else if arr[mid] < target {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+    None
+}
+
+fn linear_search(arr: &[i32], target: i32) -> Option<usize> {
+    for (index, &item) in arr.iter().enumerate() {
+        if item == target {
+            return Some(index);
+        }
+    }
+    None
 }
