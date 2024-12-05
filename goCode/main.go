@@ -2,6 +2,7 @@ package main
 
 import (
     "fmt"
+    "math/rand"
     "time"
 )
 
@@ -15,8 +16,28 @@ func main() {
     matrixB := GenerateMatrix(100, 100)
     MatrixMultiply(matrixA, matrixB)
 
+    rand.Seed(time.Now().UnixNano())
+    datasetOne := GenerateDataset()
+    datasetTwo := GenerateDataset()
+    datasetThree := GenerateDataset()
+    datasetFour := GenerateDataset()
+
+
+    quicksort(datasetOne)
+    mergesort(datasetTwo)
+    heapsort(datasetThree)
+    insertionSort(datasetFour)
+
     elapsed := time.Since(start)
     fmt.Printf("Elapsed time Go: %f seconds\n", elapsed.Seconds())
+}
+
+func GenerateDataset() []int {
+    dataset := make([]int, 10000)
+    for i := range dataset {
+        dataset[i] = rand.Intn(1000) + 1
+    }
+    return dataset
 }
 
 func Fibonacci(n int, memo map[int]int64) int64 {
@@ -56,4 +77,89 @@ func MatrixMultiply(a, b [][]int) [][]int {
         }
     }
     return result
+}
+
+func quicksort(arr []int) {
+    if len(arr) < 2 {
+        return
+    }
+    left, right := 0, len(arr)-1
+    pivot := rand.Int() % len(arr)
+    arr[pivot], arr[right] = arr[right], arr[pivot]
+    for i := range arr {
+        if arr[i] < arr[right] {
+            arr[i], arr[left] = arr[left], arr[i]
+            left++
+        }
+    }
+    arr[left], arr[right] = arr[right], arr[left]
+    quicksort(arr[:left])
+    quicksort(arr[left+1:])
+}
+
+func mergesort(arr []int) []int {
+    if len(arr) < 2 {
+        return arr
+    }
+    mid := len(arr) / 2
+    return merge(mergesort(arr[:mid]), mergesort(arr[mid:]))
+}
+
+func merge(left, right []int) []int {
+    result := make([]int, 0, len(left)+len(right))
+    i, j := 0, 0
+    for i < len(left) && j < len(right) {
+        if left[i] < right[j] {
+            result = append(result, left[i])
+            i++
+        } else {
+            result = append(result, right[j])
+            j++
+        }
+    }
+    result = append(result, left[i:]...)
+    result = append(result, right[j:]...)
+    return result
+}
+
+func heapsort(arr []int) {
+    buildMaxHeap(arr)
+    for i := len(arr) - 1; i > 0; i-- {
+        arr[0], arr[i] = arr[i], arr[0]
+        maxHeapify(arr[:i], 0)
+    }
+}
+
+func buildMaxHeap(arr []int) {
+    for i := len(arr)/2 - 1; i >= 0; i-- {
+        maxHeapify(arr, i)
+    }
+}
+
+func maxHeapify(arr []int, i int) {
+    left := 2*i + 1
+    right := 2*i + 2
+    largest := i
+    if left < len(arr) && arr[left] > arr[largest] {
+        largest = left
+    }
+    if right < len(arr) && arr[right] > arr[largest] {
+        largest = right
+    }
+    if largest != i {
+        arr[i], arr[largest] = arr[largest], arr[i]
+        maxHeapify(arr, largest)
+    }
+}
+
+func insertionSort(arr []int) {
+    for i := 1; i < len(arr); i++ {
+        key := arr[i]
+        j := i - 1
+        for j >= 0 && arr[j] > key {
+            arr[j+1] = arr[j]
+            j--
+        }
+        arr[j+1] = key
+    }
 }
