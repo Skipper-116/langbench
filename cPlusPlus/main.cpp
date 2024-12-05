@@ -2,6 +2,8 @@
 #include <vector>
 #include <unordered_map>
 #include <chrono>
+#include <algorithm>
+#include <random>
 
 using namespace std;
 using namespace std::chrono;
@@ -34,6 +36,89 @@ vector<vector<int> > MatrixMultiply(const vector<vector<int> >& matrixA, const v
     return result;
 }
 
+int Partition(vector<int>& arr, int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    for (int j = low; j < high; ++j) {
+        if (arr[j] < pivot) {
+            ++i;
+            swap(arr[i], arr[j]);
+        }
+    }
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+
+// Quicksort
+void QuickSort(vector<int>& arr, int low, int high) {
+    if (low < high) {
+        int pivot = Partition(arr, low, high);
+        QuickSort(arr, low, pivot - 1);
+        QuickSort(arr, pivot + 1, high);
+    }
+}
+
+void Merge(vector<int>& arr, int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    vector<int> L(n1), R(n2);
+    for (int i = 0; i < n1; ++i) L[i] = arr[left + i];
+    for (int i = 0; i < n2; ++i) R[i] = arr[mid + 1 + i];
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) arr[k++] = L[i++];
+        else arr[k++] = R[j++];
+    }
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
+}
+
+// Mergesort
+void MergeSort(vector<int>& arr, int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+        MergeSort(arr, left, mid);
+        MergeSort(arr, mid + 1, right);
+        Merge(arr, left, mid, right);
+    }
+}
+
+// Heapsort
+void Heapify(vector<int>& arr, int n, int i) {
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+    if (left < n && arr[left] > arr[largest]) largest = left;
+    if (right < n && arr[right] > arr[largest]) largest = right;
+    if (largest != i) {
+        swap(arr[i], arr[largest]);
+        Heapify(arr, n, largest);
+    }
+}
+
+void HeapSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = n / 2 - 1; i >= 0; --i) Heapify(arr, n, i);
+    for (int i = n - 1; i > 0; --i) {
+        swap(arr[0], arr[i]);
+        Heapify(arr, i, 0);
+    }
+}
+
+// Insertion sort
+void InsertionSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 1; i < n; ++i) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            --j;
+        }
+        arr[j + 1] = key;
+    }
+}
+
 int main() {
     high_resolution_clock::time_point start = high_resolution_clock::now();
     unordered_map<int, long> memo;
@@ -42,6 +127,26 @@ int main() {
     vector<vector<int> > matrixA = GenerateMatrix(100, 100);
     vector<vector<int> > matrixB = GenerateMatrix(100, 100);
     MatrixMultiply(matrixA, matrixB);
+
+    // Generate dataset
+    vector<int> dataset(10000);
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(1, 1000);
+    for (int& num : dataset) {
+        num = dis(gen);
+    }
+
+    // Sort using different algorithms
+    vector<int> quicksort_dataset = dataset;
+    vector<int> mergesort_dataset = dataset;
+    vector<int> heapsort_dataset = dataset;
+    vector<int> insertionsort_dataset = dataset;
+
+    QuickSort(quicksort_dataset, 0, quicksort_dataset.size() - 1);
+    MergeSort(mergesort_dataset, 0, mergesort_dataset.size() - 1);
+    HeapSort(heapsort_dataset);
+    InsertionSort(insertionsort_dataset);
 
     high_resolution_clock::time_point stop = high_resolution_clock::now();
     std::chrono::duration<double, std::milli> duration = duration_cast<std::chrono::duration<double, std::milli> >(stop - start);

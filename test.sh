@@ -7,7 +7,7 @@ dotnet build ./csharp/MyFirstProgram.csproj
 javac ./javaCode/Main.java
 
 # Compile the C++ program
-g++ -o cPlusPlus/main ./cPlusPlus/main.cpp
+g++ -std=c++11 -o cPlusPlus/main ./cPlusPlus/main.cpp
 
 # Compile the C program
 gcc -o cCode/program ./cCode/program.c
