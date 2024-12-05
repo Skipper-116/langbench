@@ -87,6 +87,37 @@ def insertion_sort(arr)
   arr
 end
 
+def binary_search(arr, target)
+  low = 0
+  high = arr.length - 1
+
+  while low <= high
+    mid = (low + high) / 2
+    if arr[mid] == target
+      return mid
+    elsif arr[mid] < target
+      low = mid + 1
+    else
+      high = mid - 1
+    end
+  end
+
+  -1
+end
+
+def linear_search(arr, target)
+  arr.each_with_index do |element, index|
+    return index if element == target
+  end
+  -1
+end
+
+def generate_large_arrays(size)
+  unsorted_array = Array.new(size) { rand(1_000_000) }
+  sorted_array = unsorted_array.sort
+  [unsorted_array, sorted_array]
+end
+
 start_time = Time.now
 
 fibonacci(1000)
@@ -99,6 +130,12 @@ quicksort(array.dup)
 mergesort(array.dup)
 heapsort(array.dup)
 insertion_sort(array.dup)
+
+unsorted_array, sorted_array = generate_large_arrays(10_000)
+target = rand(1_000_000)
+
+binary_search(sorted_array, target)
+linear_search(unsorted_array, target)
 
 end_time = Time.now
 puts "Elapsed time Ruby: #{end_time - start_time} seconds"
