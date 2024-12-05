@@ -1,6 +1,6 @@
 # LangBench: Cross-Language Performance Benchmarking
 
-Welcome to LangBench! This project aims to benchmark the performance of various programming languages by running a Fibonacci calculation and matrix multiplication. Our goal is to provide a comprehensive comparison of execution times across different languages and encourage contributions from the developer community.
+Welcome to LangBench! This project aims to benchmark the performance of various programming languages by running a Fibonacci calculation, matrix multiplication and sorting Algorithms (quicksort, mergesort, heapsort, and insertion sort). Our goal is to provide a comprehensive comparison of execution times across different languages and encourage contributions from the developer community.
 
 ## Why LangBench?
 
@@ -44,17 +44,17 @@ The following language versions are used in this project:
 
 ## Project Structure
 
-- `./cPlusPlus/main.cpp`: Contains the C++ implementation of the Fibonacci calculation and matrix multiplication.
-- `./cSharp/Program.cs`: Contains the C# implementation of the Fibonacci calculation and matrix multiplication.
-- `./javaCode/Main.java`: Contains the Java implementation of the Fibonacci calculation and matrix multiplication.
-- `./rubyCode/sample.rb`: Contains the Ruby implementation of the Fibonacci calculation and matrix multiplication.
-- `./cCode/program.c`: Contains the C implementation of the Fibonacci calculation and matrix multiplication.
-- `./pyCode/main.py`: Contains the Python implementation of the Fibonacci calculation and matrix multiplication.
-- `./jsCode/index.js`: Contains the JavaScript implementation of the Fibonacci calculation and matrix multiplication.
-- `./phpCode/index.php`: Contains the PHP implementation of the Fibonacci calculation and matrix multiplication.
-- `./goCode/main.go`: Contains the Go implementation of the Fibonacci calculation and matrix multiplication.
-- `./rustCode/src/main.rs`: Contains the Rust implementation of the Fibonacci calculation and matrix multiplication.
-- `./dartCode/program.dart`: Contains the Dart implementation of the Fibonacci calculation and matrix multiplication.
+- `./cPlusPlus/main.cpp`: Contains the C++ implementation.
+- `./cSharp/Program.cs`: Contains the C# implementation.
+- `./javaCode/Main.java`: Contains the Java implementation.
+- `./rubyCode/sample.rb`: Contains the Ruby implementation.
+- `./cCode/program.c`: Contains the C implementation.
+- `./pyCode/main.py`: Contains the Python implementation.
+- `./jsCode/index.js`: Contains the JavaScript implementation.
+- `./phpCode/index.php`: Contains the PHP implementation.
+- `./goCode/main.go`: Contains the Go implementation.
+- `./rustCode/src/main.rs`: Contains the Rust implementation.
+- `./dartCode/program.dart`: Contains the Dart implementation.
 - `test.sh`: Script to run the benchmarks for each language.
 
 ## Current Output
@@ -62,21 +62,24 @@ The following language versions are used in this project:
 After running the `test.sh` script, you will see output similar to the following:
 
 ```sh
-Elapsed time C#: 0.012443 seconds
-Elapsed time Go: 0.009214 seconds
-Elapsed time Python: 0.20249485969543457 seconds
-Elapsed time Java: 0.028840167 seconds
-Elapsed time PHP: 0.18245697021484 seconds
-Elapsed time JS: 0.038 seconds
-Elapsed time Rust: 0.00520133 seconds
-Elapsed time Ruby: 0.097235 seconds
-Elapsed time C: 0.003723 seconds
-Elapsed time C++: 0.0107881 seconds
-Elapsed time Dart: 0.008 seconds
+Elapsed time C#: 0.1082393 seconds
+Elapsed time Go: 0.032000 seconds
+Elapsed time Java: 0.065739042 seconds
+Elapsed time C: 0.072457 seconds
+Elapsed time JS: 0.208 seconds
+Elapsed time Rust: 0.03261954 seconds
+Elapsed time Dart: 0.132 seconds
+Elapsed time C++: 0.320144 seconds
+Elapsed time PHP: 1.80006980896 seconds
+Elapsed time Python: 2.640360116958618 seconds
+Elapsed time Ruby: 3.064133 seconds
 ```
 
-Visual representation of the output:
+Visual representation of the output before sorting algorithms:
 ![alt text](image-3.png)
+
+Visual representation of the output after sorting algorithms:
+![alt text](image-2.png)
 
 ## Requirements
 Make sure you have the following installed on your system:
