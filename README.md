@@ -62,17 +62,17 @@ The following language versions are used in this project:
 After running the `test.sh` script, you will see output similar to the following:
 
 ```sh
-Elapsed time C#: 0.1082393 seconds
-Elapsed time Go: 0.032000 seconds
-Elapsed time Java: 0.065739042 seconds
-Elapsed time C: 0.072457 seconds
-Elapsed time JS: 0.208 seconds
-Elapsed time Rust: 0.03261954 seconds
-Elapsed time Dart: 0.132 seconds
-Elapsed time C++: 0.320144 seconds
-Elapsed time PHP: 1.80006980896 seconds
-Elapsed time Python: 2.640360116958618 seconds
-Elapsed time Ruby: 3.064133 seconds
+Elapsed time C#: 0.1122968 seconds
+Elapsed time Go: 0.071175 seconds
+Elapsed time JS: 0.244 seconds
+Elapsed time Rust: 0.03589858 seconds
+Elapsed time Java: 0.1172085 seconds
+Elapsed time C++: 0.314265 seconds
+Elapsed time Dart: 0.124 seconds
+Elapsed time C: 0.117350 seconds
+Elapsed time PHP: 1.9165921211243 seconds
+Elapsed time Python: 2.880129098892212 seconds
+Elapsed time Ruby: 3.134608 seconds
 ```
 
 Visual representation of the output before sorting algorithms:
@@ -80,6 +80,18 @@ Visual representation of the output before sorting algorithms:
 
 Visual representation of the output after sorting algorithms:
 ![alt text](image-2.png)
+
+Visual representation of the output after search algorithms:
+![alt text](image-4.png)
+
+## Contributing
+We welcome contributions from the community to improve LangBench. Here are some ways you can contribute:
+
+1. **Report Bugs**: If you find any bugs, please report them by creating an issue on our GitHub repository.
+2. **Suggest Features**: Have an idea for a new feature? Open an issue to discuss it with the community.
+3. **Submit Pull Requests**: If you have a fix or a new feature, feel free to submit a pull request. Make sure to follow the contribution guidelines.
+4. **Improve Documentation**: Help us improve our documentation by suggesting changes or adding new content.
+5. **Benchmark New Languages**: Add benchmarks for new programming languages and submit a pull request.
 
 ## Requirements
 Make sure you have the following installed on your system:
