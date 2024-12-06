@@ -119,6 +119,33 @@ void InsertionSort(vector<int>& arr) {
     }
 }
 
+// Binary Search implementation
+int BinarySearch(const vector<int>& arr, int target) {
+    int left = 0;
+    int right = arr.size() - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1; // Target not found
+}
+
+// Linear Search implementation
+int LinearSearch(const vector<int>& arr, int target) {
+    for (int i = 0; i < arr.size(); ++i) {
+        if (arr[i] == target) {
+            return i;
+        }
+    }
+    return -1; // Target not found
+}
+
 int main() {
     high_resolution_clock::time_point start = high_resolution_clock::now();
     unordered_map<int, long> memo;
@@ -147,6 +174,14 @@ int main() {
     MergeSort(mergesort_dataset, 0, mergesort_dataset.size() - 1);
     HeapSort(heapsort_dataset);
     InsertionSort(insertionsort_dataset);
+
+    // Search for a target and the target should be random
+    int target = dataset[dis(gen)];
+    vector<int> sorted_array = quicksort_dataset;
+    vector<int> unsorted_array = dataset;
+
+    BinarySearch(sorted_array, target);
+    LinearSearch(unsorted_array, target);
 
     high_resolution_clock::time_point stop = high_resolution_clock::now();
     std::chrono::duration<double, std::milli> duration = duration_cast<std::chrono::duration<double, std::milli> >(stop - start);
