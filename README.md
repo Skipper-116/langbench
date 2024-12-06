@@ -85,13 +85,7 @@ Visual representation of the output after search algorithms:
 ![alt text](assets/image-4.png)
 
 ## Contributing
-We welcome contributions from the community to improve LangBench. Here are some ways you can contribute:
-
-1. **Report Bugs**: If you find any bugs, please report them by creating an issue on our GitHub repository.
-2. **Suggest Features**: Have an idea for a new feature? Open an issue to discuss it with the community.
-3. **Submit Pull Requests**: If you have a fix or a new feature, feel free to submit a pull request. Make sure to follow the contribution guidelines.
-4. **Improve Documentation**: Help us improve our documentation by suggesting changes or adding new content.
-5. **Benchmark New Languages**: Add benchmarks for new programming languages and submit a pull request.
+More details about contributing can be found here [Contributing](CONTRIBUTING.md)
 
 ## Requirements
 Make sure you have the following installed on your system:
