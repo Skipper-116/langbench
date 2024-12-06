@@ -140,6 +140,32 @@ function generateRandomArray($size, $maxValue) {
     return $array;
 }
 
+function binarySearch($arr, $x) {
+    $l = 0;
+    $r = count($arr) - 1;
+    while ($l <= $r) {
+        $m = floor(($l + $r) / 2);
+        if ($arr[$m] == $x) {
+            return $m;
+        }
+        if ($arr[$m] < $x) {
+            $l = $m + 1;
+        } else {
+            $r = $m - 1;
+        }
+    }
+    return -1;
+}
+
+function linearSearch($arr, $x) {
+    for ($i = 0; $i < count($arr); $i++) {
+        if ($arr[$i] == $x) {
+            return $i;
+        }
+    }
+    return -1;
+}
+
 $start = microtime(true);
 
 $memo = [];
@@ -158,6 +184,17 @@ quicksort($quicksortArray, 0, count($quicksortArray) - 1);
 mergesort($mergesortArray);
 heapsort($heapsortArray);
 insertionSort($insertionSortArray);
+
+
+// Generate large sorted and unsorted arrays
+$sortedArray = range(1, 100000);
+$unsortedArray = $sortedArray;
+shuffle($unsortedArray);
+
+// Perform searches searchElement should be random
+$searchElement = rand(1, 100000);
+binarySearch($sortedArray, $searchElement);
+linearSearch($unsortedArray, $searchElement);
 
 $end = microtime(true);
 $elapsed = $end - $start;
