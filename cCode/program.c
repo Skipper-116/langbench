@@ -3,6 +3,56 @@
 #include <time.h>
 #include <string.h>
 
+// Linear Search
+int linear_search(int arr[], int n, int x) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == x)
+            return i;
+    }
+    return -1;
+}
+
+// Binary Search
+int binary_search(int arr[], int l, int r, int x) {
+    while (l <= r) {
+        int m = l + (r - l) / 2;
+        if (arr[m] == x)
+            return m;
+        if (arr[m] < x)
+            l = m + 1;
+        else
+            r = m - 1;
+    }
+    return -1;
+}
+
+// Jump Search
+// int jump_search(int arr[], int n, int x) {
+//     int step = sqrt(n);
+//     int prev = 0;
+//     while (arr[min(step, n) - 1] < x) {
+//         prev = step;
+//         step += sqrt(n);
+//         if (prev >= n)
+//             return -1;
+//     }
+//     for (int i = prev; i < min(step, n); i++) {
+//         if (arr[i] == x)
+//             return i;
+//     }
+//     return -1;
+// }
+
+// // Exponential Search
+// int exponential_search(int arr[], int n, int x) {
+//     if (arr[0] == x)
+//         return 0;
+//     int i = 1;
+//     while (i < n && arr[i] <= x)
+//         i = i * 2;
+//     return binary_search(arr, i / 2, min(i, n - 1), x);
+// }
+
 long Fibonacci(int n, long *memo) {
     if (n <= 1) return n;
     if (memo[n] != -1) return memo[n];
@@ -180,27 +230,47 @@ int main() {
     int *qs_dataset = (int *)malloc(dataset_size * sizeof(int));
     memcpy(qs_dataset, dataset, dataset_size * sizeof(int));
     quicksort(qs_dataset, 0, dataset_size - 1);
-    free(qs_dataset);
+    
 
     // merge_sort
     int *ms_dataset = (int *)malloc(dataset_size * sizeof(int));
     memcpy(ms_dataset, dataset, dataset_size * sizeof(int));
     merge_sort(ms_dataset, 0, dataset_size - 1);
-    free(ms_dataset);
+    
 
     // heap_sort
     int *hs_dataset = (int *)malloc(dataset_size * sizeof(int));
     memcpy(hs_dataset, dataset, dataset_size * sizeof(int));
     heap_sort(hs_dataset, dataset_size);
-    free(hs_dataset);
+    
 
     // Insertion sort
     int *is_dataset = (int *)malloc(dataset_size * sizeof(int));
     memcpy(is_dataset, dataset, dataset_size * sizeof(int));
     insertionsort(is_dataset, dataset_size);
-    free(is_dataset);
 
+    free(qs_dataset);
+    free(ms_dataset);
+    free(hs_dataset);
+    free(is_dataset);
     free(dataset);
+
+
+    // searching algorithms
+    int search_dataset_size = 10000;
+    int *search_dataset = (int *)malloc(search_dataset_size * sizeof(int));
+
+    for (int i = 0; i < search_dataset_size; i++) {
+        search_dataset[i] = rand() % 1000 + 1;
+    }
+
+    int x = search_dataset[0];
+    linear_search(search_dataset, search_dataset_size, x);
+    binary_search(search_dataset, 0, search_dataset_size - 1, x);
+    // jump_search(search_dataset, search_dataset_size, x);
+    // exponential_search(search_dataset, search_dataset_size, x);
+
+    free(search_dataset);
 
 
     end = clock();
