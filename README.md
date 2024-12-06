@@ -1,6 +1,6 @@
 # LangBench: Cross-Language Performance Benchmarking
 
-Welcome to LangBench! This project aims to benchmark the performance of various programming languages by running a Fibonacci calculation, matrix multiplication and sorting Algorithms (quicksort, mergesort, heapsort, and insertion sort). Our goal is to provide a comprehensive comparison of execution times across different languages and encourage contributions from the developer community.
+Welcome to LangBench! This project aims to benchmark the performance of various programming languages by running a Fibonacci calculation, matrix multiplication, sorting Algorithms (quicksort, mergesort, heapsort, and insertion sort) and search algorithms (Liner and Binary, to add jump and exponential search). Our goal is to provide a comprehensive comparison of execution times across different languages and encourage contributions from the developer community.
 
 ## Why LangBench?
 
