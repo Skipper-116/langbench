@@ -76,13 +76,13 @@ Elapsed time Ruby: 3.134608 seconds
 ```
 
 Visual representation of the output before sorting algorithms:
-![alt text](image-3.png)
+![alt text](assets/image-3.png)
 
 Visual representation of the output after sorting algorithms:
-![alt text](image-2.png)
+![alt text](assets/image-2.png)
 
 Visual representation of the output after search algorithms:
-![alt text](image-4.png)
+![alt text](assets/image-4.png)
 
 ## Contributing
 We welcome contributions from the community to improve LangBench. Here are some ways you can contribute:
