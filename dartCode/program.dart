@@ -1,12 +1,16 @@
 import 'dart:collection';
 import 'dart:core';
+import 'dart:ffi';
 import 'dart:math';
 
 void main() {
   var stopwatch = Stopwatch()..start();
   var memo = HashMap<int, int>();
 
+  //Fibonacci
   fibonacci(1000, memo);
+
+  // matrix multiplication
   var matrixA = generateMatrix(100, 100);
   var matrixB = generateMatrix(100, 100);
   matrixMultiply(matrixA, matrixB);
@@ -26,9 +30,43 @@ void main() {
   var insertionSortDataset = List<int>.from(dataset);
   insertionSort(insertionSortDataset);
 
+  // Searching algorithms
+  // target should be random number from range 1 to 100000
+  var target = Random().nextInt(100000) + 1;
+  linearSearch(dataset, target);
+  var sortedDataset = List<int>.from(dataset)..sort();
+  binarySearch(sortedDataset, target);
+
   stopwatch.stop();
-  print(
-      'Elapsed time Dart: ${stopwatch.elapsed.inMilliseconds / 1000.0} seconds');
+  var time = stopwatch.elapsed.inMilliseconds / 1000.0;
+  print('Elapsed time Dart: ${time} seconds');
+}
+
+int linearSearch(List<int> array, int target) {
+  for (int i = 0; i < array.length; i++) {
+    if (array[i] == target) {
+      return i;
+    }
+  }
+  return -1; // Not found
+}
+
+int binarySearch(List<int> array, int target) {
+  int left = 0;
+  int right = array.length - 1;
+
+  while (left <= right) {
+    int middle = left + (right - left) ~/ 2;
+
+    if (array[middle] == target) {
+      return middle;
+    } else if (array[middle] < target) {
+      left = middle + 1;
+    } else {
+      right = middle - 1;
+    }
+  }
+  return -1; // Not found
 }
 
 int fibonacci(int n, HashMap<int, int> memo) {
