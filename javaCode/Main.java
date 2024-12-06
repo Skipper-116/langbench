@@ -28,9 +28,48 @@ public class Main {
         int[] insertionSortArray = Arrays.copyOf(dataset, dataset.length);
         insertionSort(insertionSortArray);
 
+        // choose a random number from the dataset
+        Random rand = new Random();
+        int target = dataset[rand.nextInt(dataset.length)];
+        int[] sortedDataset = Arrays.copyOf(dataset, dataset.length);
+        Arrays.sort(sortedDataset);
+
+        // linear search
+        linearSearch(insertionSortArray, target);
+
+        // binary search
+        binarySearch(sortedDataset, target);
+
+
         long endTime = System.nanoTime();
         double elapsedTime = (endTime - startTime) / 1e9;
         System.out.println("Elapsed time Java: " + elapsedTime + " seconds");
+    }
+
+    public static int linearSearch(int[] array, int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int binarySearch(int[] array, int target) {
+        int left = 0;
+        int right = array.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (array[mid] == target) {
+                return mid;
+            }
+            if (array[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
     }
 
     public static long fibonacci(int n, Map<Integer, Long> memo) {
