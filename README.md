@@ -15,8 +15,7 @@ Welcome to LangBench! This project aims to benchmark the performance of various 
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/Skipper-116/langbench.git
-    cd langbench
+    git clone https://github.com/Skipper-116/langbench.git && cd langbench
     ```
 
 2. Ensure you have the required versions of each language installed on your system.
